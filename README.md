@@ -41,30 +41,14 @@ The [dot product][dot-product] (or scalar product) is defined as
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/blas-sdot
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var sdot = require( '@stdlib/blas-sdot' );
+import sdot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@deno/mod.js';
 ```
 
 #### sdot( x, y )
@@ -72,8 +56,8 @@ var sdot = require( '@stdlib/blas-sdot' );
 Calculates the dot product of vectors `x` and `y`.
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
-var array = require( '@stdlib/ndarray-array' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
+import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@deno/mod.js';
 
 var x = array( new Float32Array( [ 4.0, 2.0, -3.0, 5.0, -1.0 ] ) );
 var y = array( new Float32Array( [ 2.0, 6.0, -1.0, -4.0, 8.0 ] ) );
@@ -90,8 +74,8 @@ The function has the following parameters:
 If provided empty vectors, the function returns `0.0`.
 
 ```javascript
-var Float32Array = require( '@stdlib/array-float32' );
-var array = require( '@stdlib/ndarray-array' );
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
+import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@deno/mod.js';
 
 var x = array( new Float32Array() );
 var y = array( new Float32Array() );
@@ -121,10 +105,10 @@ var z = sdot( x, y );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-var discreteUniform = require( '@stdlib/random-base-discrete-uniform' );
-var Float32Array = require( '@stdlib/array-float32' );
-var array = require( '@stdlib/ndarray-array' );
-var sdot = require( '@stdlib/blas-sdot' );
+import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@deno/mod.js';
+import Float32Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@deno/mod.js';
+import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@deno/mod.js';
+import sdot from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@deno/mod.js';
 
 var x = array( new Float32Array( 10 ) );
 var y = array( new Float32Array( 10 ) );
@@ -173,7 +157,7 @@ console.log( z );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -237,15 +221,15 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 [blas]: http://www.netlib.org/blas
 
-[@stdlib/ndarray/array]: https://github.com/stdlib-js/ndarray-array
+[@stdlib/ndarray/array]: https://github.com/stdlib-js/ndarray-array/tree/deno
 
 <!-- <related-links> -->
 
-[@stdlib/blas/base/sdot]: https://github.com/stdlib-js/blas-base-sdot
+[@stdlib/blas/base/sdot]: https://github.com/stdlib-js/blas-base-sdot/tree/deno
 
-[@stdlib/blas/ddot]: https://github.com/stdlib-js/blas-ddot
+[@stdlib/blas/ddot]: https://github.com/stdlib-js/blas-ddot/tree/deno
 
-[@stdlib/blas/gdot]: https://github.com/stdlib-js/blas-gdot
+[@stdlib/blas/gdot]: https://github.com/stdlib-js/blas-gdot/tree/deno
 
 <!-- </related-links> -->
 
