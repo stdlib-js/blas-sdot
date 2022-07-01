@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2020 The Stdlib Authors.
@@ -16,17 +16,25 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 2.0
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { ndarray } from '@stdlib/types/ndarray';
 
 /**
-* BLAS level 1 routine to compute the dot product of two single-precision floating-point vectors.
+* Computes the dot product of two single-precision floating-point vectors.
 *
-* @module @stdlib/blas-sdot
+* @param x - first input array
+* @param y - second input array
+* @throws first argument must be a 1-dimensional `ndarray` containing single-precision floating-point numbers
+* @throws second argument must be a 1-dimensional `ndarray` containing single-precision floating-point numbers
+* @throws input arrays must be the same length
+* @returns dot product
 *
 * @example
-* var Float32Array = require( '@stdlib/array-float32' );
-* var array = require( '@stdlib/ndarray-array' );
-* var sdot = require( '@stdlib/blas-sdot' );
+* var Float32Array = require( `@stdlib/array/float32` );
+* var array = require( `@stdlib/ndarray/array` );
 *
 * var x = array( new Float32Array( [ 4.0, 2.0, -3.0, 5.0, -1.0 ] ) );
 * var y = array( new Float32Array( [ 2.0, 6.0, -1.0, -4.0, 8.0 ] ) );
@@ -34,12 +42,9 @@
 * var z = sdot( x, y );
 * // returns -5.0
 */
-
-// MODULES //
-
-var sdot = require( './main.js' );
+declare function sdot( x: ndarray, y: ndarray ): number;
 
 
 // EXPORTS //
 
-module.exports = sdot;
+export = sdot;
