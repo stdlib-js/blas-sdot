@@ -30,10 +30,14 @@ The [dot product][dot-product] (or scalar product) is defined as
 
 <!-- <equation class="equation" label="eq:dot_product" align="center" raw="\mathbf{x}\cdot\mathbf{y} = \sum_{i=0}^{N-1} x_i y_i = x_0 y_0 + x_1 y_1 + \ldots + x_{N-1} y_{N-1}" alt="Dot product definition."> -->
 
-<div class="equation" align="center" data-raw-text="\mathbf{x}\cdot\mathbf{y} = \sum_{i=0}^{N-1} x_i y_i = x_0 y_0 + x_1 y_1 + \ldots + x_{N-1} y_{N-1}" data-equation="eq:dot_product">
+```math
+\mathbf{x}\cdot\mathbf{y} = \sum_{i=0}^{N-1} x_i y_i = x_0 y_0 + x_1 y_1 + \ldots + x_{N-1} y_{N-1}
+```
+
+<!-- <div class="equation" align="center" data-raw-text="\mathbf{x}\cdot\mathbf{y} = \sum_{i=0}^{N-1} x_i y_i = x_0 y_0 + x_1 y_1 + \ldots + x_{N-1} y_{N-1}" data-equation="eq:dot_product">
     <img src="https://cdn.jsdelivr.net/gh/stdlib-js/stdlib@03fff24f5a7ba807a292f08cfef75ed0748e40de/lib/node_modules/@stdlib/blas/sdot/docs/img/equation_dot_product.svg" alt="Dot product definition.">
     <br>
-</div>
+</div> -->
 
 <!-- </equation> -->
 
@@ -41,38 +45,30 @@ The [dot product][dot-product] (or scalar product) is defined as
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-sdot
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-sdot = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var sdot = require( 'path/to/vendor/umd/blas-sdot/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.sdot;
-})();
-</script>
+var sdot = require( '@stdlib/blas-sdot' );
 ```
 
 #### sdot( x, y )
@@ -128,16 +124,11 @@ var z = sdot( x, y );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' );
+var Float32Array = require( '@stdlib/array-float32' );
+var array = require( '@stdlib/ndarray-array' );
+var sdot = require( '@stdlib/blas-sdot' );
 
 var x = array( new Float32Array( 10 ) );
 var y = array( new Float32Array( 10 ) );
@@ -155,11 +146,6 @@ console.log( y.toString() );
 
 var z = sdot( x, y );
 console.log( z );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -174,9 +160,9 @@ console.log( z );
 
 ## See Also
 
--   <span class="package-name">[`@stdlib/blas/base/sdot`][@stdlib/blas/base/sdot]</span><span class="delimiter">: </span><span class="description">calculate the dot product of two single-precision floating-point vectors.</span>
--   <span class="package-name">[`@stdlib/blas/ddot`][@stdlib/blas/ddot]</span><span class="delimiter">: </span><span class="description">calculate the dot product of two double-precision floating-point vectors.</span>
--   <span class="package-name">[`@stdlib/blas/gdot`][@stdlib/blas/gdot]</span><span class="delimiter">: </span><span class="description">calculate the dot product of two vectors.</span>
+-   <span class="package-name">[`@stdlib/blas-base/sdot`][@stdlib/blas/base/sdot]</span><span class="delimiter">: </span><span class="description">calculate the dot product of two single-precision floating-point vectors.</span>
+-   <span class="package-name">[`@stdlib/blas-ddot`][@stdlib/blas/ddot]</span><span class="delimiter">: </span><span class="description">calculate the dot product of two double-precision floating-point vectors.</span>
+-   <span class="package-name">[`@stdlib/blas-gdot`][@stdlib/blas/gdot]</span><span class="delimiter">: </span><span class="description">calculate the dot product of two vectors.</span>
 
 </section>
 
@@ -235,7 +221,7 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 -->
 
 [chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://gitter.im/stdlib-js/stdlib/
+[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
@@ -255,15 +241,15 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 [blas]: http://www.netlib.org/blas
 
-[@stdlib/ndarray/array]: https://github.com/stdlib-js/ndarray-array/tree/umd
+[@stdlib/ndarray/array]: https://github.com/stdlib-js/ndarray-array
 
 <!-- <related-links> -->
 
-[@stdlib/blas/base/sdot]: https://github.com/stdlib-js/blas-base-sdot/tree/umd
+[@stdlib/blas/base/sdot]: https://github.com/stdlib-js/blas-base-sdot
 
-[@stdlib/blas/ddot]: https://github.com/stdlib-js/blas-ddot/tree/umd
+[@stdlib/blas/ddot]: https://github.com/stdlib-js/blas-ddot
 
-[@stdlib/blas/gdot]: https://github.com/stdlib-js/blas-gdot/tree/umd
+[@stdlib/blas/gdot]: https://github.com/stdlib-js/blas-gdot
 
 <!-- </related-links> -->
 
