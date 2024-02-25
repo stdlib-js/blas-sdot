@@ -65,6 +65,11 @@ The [dot product][dot-product] (or scalar product) is defined as
 To use in Observable,
 
 ```javascript
+sdot = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@umd/browser.js' )
+```
+The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/blas-sdot/tags). For example,
+
+```javascript
 sdot = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@v0.2.1-umd/browser.js' )
 ```
 
@@ -77,7 +82,7 @@ var sdot = require( 'path/to/vendor/umd/blas-sdot/index.js' )
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@v0.2.1-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -150,7 +155,7 @@ var z = sdot( x, y );
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@v0.2.1-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 
