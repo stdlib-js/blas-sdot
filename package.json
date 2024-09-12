@@ -3,31 +3,8 @@
   "version": "0.2.2",
   "description": "Calculate the dot product of two single-precision floating-point vectors.",
   "license": "Apache-2.0",
-  "author": {
-    "name": "The Stdlib Authors",
-    "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
-  },
-  "contributors": [
-    {
-      "name": "The Stdlib Authors",
-      "url": "https://github.com/stdlib-js/stdlib/graphs/contributors"
-    }
-  ],
-  "main": "./lib",
-  "directories": {
-    "benchmark": "./benchmark",
-    "doc": "./docs",
-    "example": "./examples",
-    "lib": "./lib",
-    "test": "./test"
-  },
-  "types": "./docs/types",
-  "scripts": {
-    "test": "make test",
-    "test-cov": "make test-cov",
-    "examples": "make examples",
-    "benchmark": "make benchmark"
-  },
+  "type": "module",
+  "main": "./index.mjs",
   "homepage": "https://stdlib.io",
   "repository": {
     "type": "git",
@@ -36,55 +13,6 @@
   "bugs": {
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
-  "dependencies": {
-    "@stdlib/array-base-without": "github:stdlib-js/array-base-without#main",
-    "@stdlib/assert-is-float32ndarray-like": "^0.2.2",
-    "@stdlib/assert-is-negative-integer": "^0.2.2",
-    "@stdlib/blas-base-sdot": "^0.2.2",
-    "@stdlib/math-base-special-fast-min": "^0.3.0",
-    "@stdlib/ndarray-base-maybe-broadcast-arrays": "^0.2.1",
-    "@stdlib/ndarray-base-ndarraylike2ndarray": "github:stdlib-js/ndarray-base-ndarraylike2ndarray#main",
-    "@stdlib/ndarray-base-normalize-index": "^0.2.2",
-    "@stdlib/ndarray-base-numel": "^0.2.2",
-    "@stdlib/ndarray-empty": "^0.3.0",
-    "@stdlib/ndarray-iter-stacks": "github:stdlib-js/ndarray-iter-stacks#main",
-    "@stdlib/error-tools-fmtprodmsg": "^0.2.2",
-    "@stdlib/types": "^0.4.1",
-    "@stdlib/error-tools-fmtprodmsg": "^0.2.2"
-  },
-  "devDependencies": {
-    "@stdlib/array-float32": "^0.2.2",
-    "@stdlib/array-float64": "^0.2.2",
-    "@stdlib/math-base-assert-is-nan": "^0.2.2",
-    "@stdlib/math-base-special-pow": "^0.3.0",
-    "@stdlib/ndarray-array": "^0.2.1",
-    "@stdlib/ndarray-ctor": "^0.2.2",
-    "@stdlib/ndarray-ndims": "^0.2.2",
-    "@stdlib/ndarray-shape": "^0.2.2",
-    "@stdlib/ndarray-to-array": "^0.2.1",
-    "@stdlib/ndarray-zeros": "^0.3.0",
-    "@stdlib/random-array-discrete-uniform": "^0.2.1",
-    "@stdlib/random-array-uniform": "^0.2.1",
-    "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
-    "istanbul": "^0.4.1",
-    "tap-min": "git+https://github.com/Planeshifter/tap-min.git",
-    "@stdlib/bench-harness": "^0.2.2"
-  },
-  "engines": {
-    "node": ">=0.10.0",
-    "npm": ">2.7.0"
-  },
-  "os": [
-    "aix",
-    "darwin",
-    "freebsd",
-    "linux",
-    "macos",
-    "openbsd",
-    "sunos",
-    "win32",
-    "windows"
-  ],
   "keywords": [
     "stdlib",
     "stdmath",
