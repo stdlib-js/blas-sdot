@@ -14,7 +14,6 @@
     }
   ],
   "main": "./lib",
-  "browser": "./lib/main.js",
   "directories": {
     "benchmark": "./benchmark",
     "doc": "./docs",
@@ -38,8 +37,17 @@
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
   "dependencies": {
-    "@stdlib/assert-is-float32vector-like": "^0.2.2",
+    "@stdlib/array-base-without": "github:stdlib-js/array-base-without#main",
+    "@stdlib/assert-is-float32ndarray-like": "^0.2.2",
+    "@stdlib/assert-is-negative-integer": "^0.2.2",
     "@stdlib/blas-base-sdot": "^0.2.2",
+    "@stdlib/math-base-special-fast-min": "^0.3.0",
+    "@stdlib/ndarray-base-maybe-broadcast-arrays": "^0.2.1",
+    "@stdlib/ndarray-base-ndarraylike2ndarray": "github:stdlib-js/ndarray-base-ndarraylike2ndarray#main",
+    "@stdlib/ndarray-base-normalize-index": "^0.2.2",
+    "@stdlib/ndarray-base-numel": "^0.2.2",
+    "@stdlib/ndarray-empty": "^0.3.0",
+    "@stdlib/ndarray-iter-stacks": "github:stdlib-js/ndarray-iter-stacks#main",
     "@stdlib/string-format": "^0.2.2",
     "@stdlib/types": "^0.4.1",
     "@stdlib/error-tools-fmtprodmsg": "^0.2.2"
@@ -51,8 +59,12 @@
     "@stdlib/math-base-special-pow": "^0.3.0",
     "@stdlib/ndarray-array": "^0.2.1",
     "@stdlib/ndarray-ctor": "^0.2.2",
-    "@stdlib/random-base-discrete-uniform": "^0.2.1",
-    "@stdlib/random-base-randu": "^0.2.1",
+    "@stdlib/ndarray-ndims": "^0.2.2",
+    "@stdlib/ndarray-shape": "^0.2.2",
+    "@stdlib/ndarray-to-array": "^0.2.1",
+    "@stdlib/ndarray-zeros": "^0.3.0",
+    "@stdlib/random-array-discrete-uniform": "^0.2.1",
+    "@stdlib/random-array-uniform": "^0.2.1",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
     "istanbul": "^0.4.1",
     "tap-min": "git+https://github.com/Planeshifter/tap-min.git",
