@@ -46,7 +46,7 @@ The [dot product][dot-product] (or scalar product) is defined as
 ```
 
 <!-- <div class="equation" align="center" data-raw-text="\mathbf{x}\cdot\mathbf{y} = \sum_{i=0}^{N-1} x_i y_i = x_0 y_0 + x_1 y_1 + \ldots + x_{N-1} y_{N-1}" data-equation="eq:dot_product">
-    <img src="https://cdn.jsdelivr.net/gh/stdlib-js/stdlib@03fff24f5a7ba807a292f08cfef75ed0748e40de/lib/node_modules/@stdlib/blas/sdot/docs/img/equation_dot_product.svg" alt="Dot product definition.">
+    <img src="https://cdn.jsdelivr.net/gh/stdlib-js/stdlib@d0afc603cdda35b11d5bd1633dd4dddb0d59e117/lib/node_modules/@stdlib/blas/sdot/docs/img/equation_dot_product.svg" alt="Dot product definition.">
     <br>
 </div> -->
 
@@ -56,43 +56,37 @@ The [dot product][dot-product] (or scalar product) is defined as
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-sdot
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-sdot = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@umd/browser.js' )
+var sdot = require( '@stdlib/blas-sdot' );
 ```
 
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
+#### sdot( x, y\[, dim] )
 
-```javascript
-var sdot = require( 'path/to/vendor/umd/blas-sdot/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.sdot;
-})();
-</script>
-```
-
-#### sdot( x, y )
-
-Calculates the dot product of vectors `x` and `y`.
+Calculates the dot product of two single-precision floating-point vectors `x` and `y`.
 
 ```javascript
 var Float32Array = require( '@stdlib/array-float32' );
@@ -102,25 +96,38 @@ var x = array( new Float32Array( [ 4.0, 2.0, -3.0, 5.0, -1.0 ] ) );
 var y = array( new Float32Array( [ 2.0, 6.0, -1.0, -4.0, 8.0 ] ) );
 
 var z = sdot( x, y );
+// returns <ndarray>
+
+var v = z.get();
 // returns -5.0
 ```
 
 The function has the following parameters:
 
--   **x**: a 1-dimensional [`ndarray`][@stdlib/ndarray/array] whose underlying data type is `float32`.
--   **y**: a 1-dimensional [`ndarray`][@stdlib/ndarray/array] whose underlying data type is `float32`.
+-   **x**: a non-zero-dimensional [`ndarray`][@stdlib/ndarray/ctor] whose underlying data type is `float32`. Must be [broadcast-compatible][@stdlib/ndarray/base/broadcast-shapes] with `y`.
+-   **y**: a non-zero-dimensional [`ndarray`][@stdlib/ndarray/ctor] whose underlying data type is `float32`. Must be [broadcast-compatible][@stdlib/ndarray/base/broadcast-shapes] with `x`.
+-   **dim**: dimension for which to compute the dot product. Must be a negative integer. Negative indices are resolved relative to the last array dimension, with the last dimension corresponding to `-1`. Default: `-1`.
 
-If provided empty vectors, the function returns `0.0`.
+If provided at least one input [`ndarray`][@stdlib/ndarray/ctor] having more than one dimension, the input [`ndarrays`][@stdlib/ndarray/ctor] are [broadcasted][@stdlib/ndarray/base/broadcast-shapes] to a common shape. For multi-dimensional input [`ndarrays`][@stdlib/ndarray/ctor], the function performs batched computation, such that the function computes the dot product for each pair of vectors in `x` and `y` according to the specified dimension index.
 
 ```javascript
 var Float32Array = require( '@stdlib/array-float32' );
 var array = require( '@stdlib/ndarray-array' );
 
-var x = array( new Float32Array() );
-var y = array( new Float32Array() );
+var opts = {
+    'shape': [ 2, 3 ]
+};
+var x = array( new Float32Array( [ 4.0, 2.0, -3.0, 5.0, -1.0, 3.0 ] ), opts );
+var y = array( new Float32Array( [ 2.0, 6.0, -1.0, -4.0, 8.0, 2.0 ] ), opts );
 
 var z = sdot( x, y );
-// returns 0.0
+// returns <ndarray>
+
+var v1 = z.get( 0 );
+// returns 23.0
+
+var v2 = z.get( 1 );
+// returns -22.0
 ```
 
 </section>
@@ -131,6 +138,11 @@ var z = sdot( x, y );
 
 ## Notes
 
+-   The size of the contracted dimension must be the same for both input [`ndarrays`][@stdlib/ndarray/ctor].
+-   The function resolves the dimension index for which to compute the dot product **before** broadcasting.
+-   Negative indices are resolved relative to the last [`ndarray`][@stdlib/ndarray/ctor] dimension, with the last dimension corresponding to `-1`.
+-   The output [`ndarray`][@stdlib/ndarray/ctor] has the same data type as the input [`ndarrays`][@stdlib/ndarray/ctor] and has a shape which is determined by broadcasting and excludes the contracted dimension.
+-   If provided empty vectors, the dot product is `0`.
 -   `sdot()` provides a higher-level interface to the [BLAS][blas] level 1 function [`sdot`][@stdlib/blas/base/sdot].
 
 </section>
@@ -143,38 +155,28 @@ var z = sdot( x, y );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float32@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-sdot@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var array = require( '@stdlib/ndarray-array' );
+var sdot = require( '@stdlib/blas-sdot' );
 
-var x = array( new Float32Array( 10 ) );
-var y = array( new Float32Array( 10 ) );
+var opts = {
+    'dtype': 'float32'
+};
 
-var rand1 = discreteUniform.factory( 0, 100 );
-var rand2 = discreteUniform.factory( 0, 10 );
+var x = array( discreteUniform( 10, 0, 100, opts ), {
+    'shape': [ 5, 2 ]
+});
+console.log( ndarray2array( x ) );
 
-var i;
-for ( i = 0; i < x.length; i++ ) {
-    x.set( i, rand1() );
-    y.set( i, rand2() );
-}
-console.log( x.toString() );
-console.log( y.toString() );
+var y = array( discreteUniform( 10, 0, 10, opts ), {
+    'shape': x.shape
+});
+console.log( ndarray2array( y ) );
 
-var z = sdot( x, y );
-console.log( z );
-
-})();
-</script>
-</body>
-</html>
+var z = sdot( x, y, -1 );
+console.log( ndarray2array( z ) );
 ```
 
 </section>
@@ -184,14 +186,6 @@ console.log( z );
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
 <section class="related">
-
-* * *
-
-## See Also
-
--   <span class="package-name">[`@stdlib/blas-base/sdot`][@stdlib/blas/base/sdot]</span><span class="delimiter">: </span><span class="description">calculate the dot product of two single-precision floating-point vectors.</span>
--   <span class="package-name">[`@stdlib/blas-ddot`][@stdlib/blas/ddot]</span><span class="delimiter">: </span><span class="description">calculate the dot product of two double-precision floating-point vectors.</span>
--   <span class="package-name">[`@stdlib/blas-gdot`][@stdlib/blas/gdot]</span><span class="delimiter">: </span><span class="description">calculate the dot product of two vectors.</span>
 
 </section>
 
@@ -273,17 +267,11 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 [blas]: http://www.netlib.org/blas
 
-[@stdlib/ndarray/array]: https://github.com/stdlib-js/ndarray-array/tree/umd
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 
-<!-- <related-links> -->
+[@stdlib/ndarray/base/broadcast-shapes]: https://github.com/stdlib-js/ndarray-base-broadcast-shapes
 
-[@stdlib/blas/base/sdot]: https://github.com/stdlib-js/blas-base-sdot/tree/umd
-
-[@stdlib/blas/ddot]: https://github.com/stdlib-js/blas-ddot/tree/umd
-
-[@stdlib/blas/gdot]: https://github.com/stdlib-js/blas-gdot/tree/umd
-
-<!-- </related-links> -->
+[@stdlib/blas/base/sdot]: https://github.com/stdlib-js/blas-base-sdot
 
 </section>
 
