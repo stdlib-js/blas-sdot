@@ -48,7 +48,7 @@
     "@stdlib/ndarray-base-numel": "^0.2.2",
     "@stdlib/ndarray-empty": "^0.3.0",
     "@stdlib/ndarray-iter-stacks": "github:stdlib-js/ndarray-iter-stacks#main",
-    "@stdlib/string-format": "^0.2.2",
+    "@stdlib/error-tools-fmtprodmsg": "^0.2.2",
     "@stdlib/types": "^0.4.1",
     "@stdlib/error-tools-fmtprodmsg": "^0.2.2"
   },
