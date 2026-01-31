@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/blas-sdot",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Calculate the dot product of two single-precision floating-point vectors.",
   "license": "Apache-2.0",
   "author": {
@@ -40,7 +40,7 @@
     "@stdlib/array-base-without": "github:stdlib-js/array-base-without#main",
     "@stdlib/assert-is-float32ndarray-like": "^0.2.2",
     "@stdlib/assert-is-negative-integer": "^0.2.2",
-    "@stdlib/blas-base-sdot": "^0.2.2",
+    "@stdlib/blas-base-sdot": "^0.3.0",
     "@stdlib/math-base-special-fast-min": "^0.3.0",
     "@stdlib/ndarray-base-maybe-broadcast-arrays": "^0.2.1",
     "@stdlib/ndarray-base-ndarraylike2ndarray": "github:stdlib-js/ndarray-base-ndarraylike2ndarray#main",
