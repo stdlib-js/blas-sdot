@@ -48,7 +48,7 @@
     "@stdlib/ndarray-base-numel": "^0.2.3",
     "@stdlib/ndarray-empty": "^0.3.1",
     "@stdlib/ndarray-iter-stacks": "^0.1.1",
-    "@stdlib/string-format": "^0.2.3",
+    "@stdlib/error-tools-fmtprodmsg": "^0.2.3",
     "@stdlib/types": "^0.4.3",
     "@stdlib/error-tools-fmtprodmsg": "^0.2.3"
   },
