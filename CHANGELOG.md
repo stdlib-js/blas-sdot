@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-04-10)
+## Unreleased (2026-04-19)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`97d6f49`](https://github.com/stdlib-js/stdlib/commit/97d6f49c357589bfb8cd5a22ac3cb1d7e04db4fb) - **docs:** improve doctests for ndarray instances in `blas/sdot` [(#11578)](https://github.com/stdlib-js/stdlib/pull/11578) _(by Uday Kakade)_
 -   [`7a0de75`](https://github.com/stdlib-js/stdlib/commit/7a0de756636e7d90355dff3bb7023f339154384f) - **bench:** refactor to use string interpolation in blas/sdot [(#10831)](https://github.com/stdlib-js/stdlib/pull/10831) _(by Kamal Singh Rautela)_
 
 </details>
@@ -24,9 +25,10 @@
 
 ### Contributors
 
-A total of 1 person contributed to this release. Thank you to this contributor:
+A total of 2 people contributed to this release. Thank you to the following contributors:
 
 -   Kamal Singh Rautela
+-   Uday Kakade
 
 </section>
 
