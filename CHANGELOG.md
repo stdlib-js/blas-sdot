@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-08-19)
+## Unreleased (2026-08-22)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`fdbc822`](https://github.com/stdlib-js/stdlib/commit/fdbc82241f30438af95d53f451c1c4cd4523859f) - **chore:** remove unnecessary `format` calls [(#14520)](https://github.com/stdlib-js/stdlib/pull/14520) _(by Philipp Burckhardt)_
 -   [`6bf10af`](https://github.com/stdlib-js/stdlib/commit/6bf10afeef0c79c8b1f4aaed67ba416712ca5cb5) - **bench:** rename misspelled `benchmark.stack.js` in `blas/sdot` [(#12290)](https://github.com/stdlib-js/stdlib/pull/12290) _(by Philipp Burckhardt)_
 -   [`97d6f49`](https://github.com/stdlib-js/stdlib/commit/97d6f49c357589bfb8cd5a22ac3cb1d7e04db4fb) - **docs:** improve doctests for ndarray instances in `blas/sdot` [(#11578)](https://github.com/stdlib-js/stdlib/pull/11578) _(by Uday Kakade)_
 -   [`7a0de75`](https://github.com/stdlib-js/stdlib/commit/7a0de756636e7d90355dff3bb7023f339154384f) - **bench:** refactor to use string interpolation in blas/sdot [(#10831)](https://github.com/stdlib-js/stdlib/pull/10831) _(by Kamal Singh Rautela)_
